@@ -1,5 +1,4 @@
 .toast {
-  display: none;
   width: $toast-max-width;
   max-width: 100%;
   @include font-size($toast-font-size);
@@ -9,16 +8,14 @@
   background-clip: padding-box;
   border: $toast-border-width solid $toast-border-color;
   box-shadow: $toast-box-shadow;
-  opacity: 0;
   @include border-radius($toast-border-radius);
 
-  &.fade.showing {
+  &.showing {
     opacity: 0;
   }
 
-  &.show {
-    display: unset;
-    opacity: 1;
+  &:not(.show) {
+    display: none;
   }
 }
 

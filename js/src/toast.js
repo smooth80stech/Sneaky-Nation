@@ -100,15 +100,14 @@ class Toast extends BaseComponent {
 
     const complete = () => {
       this._element.classList.remove(CLASS_NAME_SHOWING)
-
       EventHandler.trigger(this._element, EVENT_SHOWN)
 
       this._maybeScheduleHide()
     }
 
     reflow(this._element)
-    this._element.classList.add(CLASS_NAME_SHOWING)
     this._element.classList.add(CLASS_NAME_SHOW)
+    this._element.classList.add(CLASS_NAME_SHOWING)
 
     this._queueCallback(complete, this._element, this._config.animation)
   }
